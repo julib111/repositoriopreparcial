@@ -1,7 +1,7 @@
 package co.edu.uniquindio;
 
 public class Objeto {
-    private String nombre;
+    private final String nombre;
     private boolean disponible;
 
     public Objeto(String nombre){

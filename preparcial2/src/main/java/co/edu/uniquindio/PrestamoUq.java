@@ -4,16 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PrestamoUq {
-    private String nombre;
-    private List<Cliente> listaClientes;
-    private List<Prestamo> listaPrestamos;
-    private List<Empleado> listaEmpleados;
+    private final List<Cliente> listaClientes;
+    private final List<Prestamo> listaPrestamos;
 
     public PrestamoUq(String nombre) {
-        this.nombre = nombre;
         listaClientes = new ArrayList<>();
         listaPrestamos = new ArrayList<>();
-        listaEmpleados = new ArrayList<>();
+        List<Empleado> listaEmpleados = new ArrayList<>();
     }
     public void agregarCliente(Cliente cliente) {
         listaClientes.add(cliente);

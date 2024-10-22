@@ -31,6 +31,38 @@ public class Main {
 
         //Uso del patrón adapter: Empleado actuando como cliente
         Cliente empleadoComoCliente = new EmpleadoAdapter(empleado1);
+        System.out.println("Empleado usando el sistema como cliente: " + empleadoComoCliente.getNombre());
+
+        //Uso del patron Bridge: prestamos locales e internacionales
+        PrestamoBridge prestamoLocal = new PrestamoLocal(new EntregaLocal());
+        PrestamoBridge prestamoInternacional = new PrestamoInternacional(new EntregaInternacional());
+
+        prestamoLocal.realizarPrestamo();
+        prestamoInternacional.realizarPrestamo();
+
+        //Uso del patrón Composite: Objeto compuesto (kit de herramientas)
+        ObjetoCompuesto kit = new ObjetoCompuesto();
+        kit.agregar(new ObjetoSimple("Martillo"));
+        kit.agregar(new ObjetoSimple("Destornillador"));
+        kit.agregar(new ObjetoSimple("LLave inglesa"));
+
+        System.out.println("\nContenido del Kit de Herramientas: ");
+        kit.mostrar();
+
+        //Uso del patrón Decorator: préstamo con seguro
+        PrestamoConSeguro prestamoConSeguro = new PrestamoConSeguro(prestamo1);
+        System.out.println("\nPréstamo con seguro: ");
+        prestamoConSeguro.realizarPrestamo();
+
+        //Uso del patrón Facade: simplificar la operacion del sistema
+        PrestamoUq sistema = new PrestamoUq("Sistema de Préstamos UQ");
+        SistemaPrestamosFacade facade = new SistemaPrestamosFacade(sistema);
+
+        facade.realizarPrestamo(cliente2, objeto2);
+
+        //Uso del patrón proxy: control de acceso a un objeto
+        ObjetoProxy proxyObjeto = new ObjetoProxy(objeto1, false);
+        System.out.println("\nIntentando acceder al objeto: " + proxyObjeto.getNombre());
 
 
     }

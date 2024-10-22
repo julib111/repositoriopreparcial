@@ -1,32 +1,32 @@
 package co.edu.uniquindio;
 
-    public interface Entrega {
+    public interface EntregaBridge {
     void entregar();
 }
 
-    class EntregaLocal implements Entrega {
+    class EntregaLocal implements EntregaBridge {
         public void entregar() {
             System.out.println("Entrega realizada localmente");
         }
     }
 
-    class EntregaInternacional implements Entrega {
+    class EntregaInternacional implements EntregaBridge {
         public void entregar() {
             System.out.println("Entrega realizada internacionalmente");
         }
     }
 
     abstract class PrestamoBridge{
-        protected Entrega entrega;
+        protected EntregaBridge entrega;
 
-        public PrestamoBridge(Entrega entrega) {
+        public PrestamoBridge(EntregaBridge entrega) {
             this.entrega = entrega;
         }
         public abstract void realizarPrestamo();
     }
 
     class PrestamoLocal extends PrestamoBridge{
-        public PrestamoLocal(Entrega entrega) {
+        public PrestamoLocal(EntregaBridge entrega) {
             super(entrega);
         }
 
@@ -38,7 +38,7 @@ package co.edu.uniquindio;
     }
 
     class PrestamoInternacional extends PrestamoBridge{
-        public PrestamoInternacional(Entrega entrega) {
+        public PrestamoInternacional(EntregaBridge entrega) {
             super(entrega);
         }
 
