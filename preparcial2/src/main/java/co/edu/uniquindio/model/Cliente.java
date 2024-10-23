@@ -1,9 +1,9 @@
-package co.edu.uniquindio;
+package co.edu.uniquindio.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-    public class Cliente extends Persona{
+    public class Cliente extends Persona {
         private final List<Prestamo> listaPrestamosAsociados;
 
         public Cliente(String nombre, String apellido, String cedula, String edad) {

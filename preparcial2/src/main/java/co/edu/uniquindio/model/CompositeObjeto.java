@@ -1,13 +1,13 @@
-package co.edu.uniquindio;
+package co.edu.uniquindio.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-abstract class CompositeObjeto {
+public abstract class CompositeObjeto {
         public abstract void mostrar();
 }
 
-    class ObjetoSimple extends CompositeObjeto {
+    public class ObjetoSimple extends CompositeObjeto {
         private final String nombre;
 
         public ObjetoSimple(String nombre) {
@@ -20,7 +20,7 @@ abstract class CompositeObjeto {
         }
     }
 
-    class ObjetoCompuesto extends CompositeObjeto {
+    public class ObjetoCompuesto extends CompositeObjeto {
         private final List<CompositeObjeto> componentes = new ArrayList<>();
 
 

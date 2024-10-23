@@ -1,4 +1,4 @@
-package co.edu.uniquindio;
+package co.edu.uniquindio.model;
 
 abstract class PrestamoDecorator extends Prestamo {
     protected Prestamo prestamo;
@@ -12,7 +12,7 @@ abstract class PrestamoDecorator extends Prestamo {
     }
 }
 
-class PrestamoConSeguro extends PrestamoDecorator {
+public class PrestamoConSeguro extends PrestamoDecorator {
     public PrestamoConSeguro(Prestamo prestamo) {
         super(prestamo);
     }

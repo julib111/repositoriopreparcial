@@ -1,18 +1,38 @@
-package co.edu.uniquindio;
+package co.edu.uniquindio.viewcontroller;
+
+import co.edu.uniquindio.controller.SistemaPrestamosFacade;
+import co.edu.uniquindio.mapping.EmpleadoAdapter;
+import co.edu.uniquindio.model.*;
+import co.edu.uniquindio.service.*;
 
 import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
+        ClienteService clienteService = new ClienteService();
+        TransaccionalService transaccion = new TransaccionalService();
+
+        transaccion.iniciarTransaccion();
+
+        //Crear algunos clientes
+        Cliente cliente1 = new Cliente("Luis","Bustamante","123456789", "47");
+        Cliente cliente2 = new Cliente("Paula","Niño","98765431", "46");
+
+        //transaccion
+        System.out.println("Listado de clientes:");
+        clienteService.listarClientes().forEach(cliente -> System.out.println(cliente.getNombre()));
+
+        Cliente clienteActualizado = new Cliente("Luis", "Bustamante", "123456789", "46");
+        clienteService.actualizarCliente(clienteActualizado);
+
+        clienteService.eliminarCliente("789123");
+
+        transaccion.confirmarTransaccion();
 
         //Crear algunos objetos
         Objeto objeto1 = new Objeto("Laptop");
         Objeto objeto2 = new Objeto("Proyector");
         Objeto objeto3 = new Objeto("Kit de herramientas");
-
-        //Crear algunos clientes
-        Cliente cliente1 = new Cliente("Luis","Bustamante","123456789", "47");
-        Cliente cliente2 = new Cliente("Paula","Niño","98765431", "46");
 
         //Crear empleados
         Empleado empleado1 = new Empleado("Gabriela","Bustamante","147852369","14");

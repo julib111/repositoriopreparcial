@@ -1,6 +1,9 @@
-package co.edu.uniquindio;
+package co.edu.uniquindio.mapping;
 
-    public class EmpleadoAdapter extends Cliente {
+import co.edu.uniquindio.model.Cliente;
+import co.edu.uniquindio.model.Empleado;
+
+public class EmpleadoAdapter extends Cliente {
 
         public EmpleadoAdapter(Empleado empleado) {
         super (empleado.getNombre(), empleado.getApellido(), empleado.getCedula(), empleado.getEdad());
